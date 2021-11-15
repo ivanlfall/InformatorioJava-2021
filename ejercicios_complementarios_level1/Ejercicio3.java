@@ -1,4 +1,4 @@
-package Ejercicios.ejercicios_complementarios_level1;
+package ejercicios_complementarios_level1;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class Ejercicio3 {
         numero = scan.nextInt();
         
         System.out.println("----------------------------------");
-        for (int i = 1; i <= numero; i++){
+        for (int i = 1; i <= numero; i++){            
             numerosAnidados += i;
             System.out.println(numerosAnidados);
         }

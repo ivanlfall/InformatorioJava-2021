@@ -1,4 +1,4 @@
-package Ejercicios.ejercicios_complementarios_level1;
+package ejercicios_complementarios_level1;
 
 import java.util.Scanner;
 
