@@ -1,6 +1,7 @@
 package ejercicios_complementarios_level3;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -8,12 +9,14 @@ import java.util.stream.Collectors;
 
 public class Ejercicio5 {
     public static void main(String[] args) {
+
+        final LocalDate NOW = LocalDate.now();
         List<Student> students = new ArrayList<>();
         fillList(students);
 
         Map<String, Integer> resultMap = students.stream()
                             .collect(Collectors.toMap(s -> s.getLastName()+" "+s.getName(), 
-                            s -> LocalDate.now().compareTo(s.getDateOfBirth())));
+                            s -> Period.between(s.getDateOfBirth(), NOW).getYears()));
         
         System.out.println("Students List: ");
         students.forEach(s -> System.out.println(s));
@@ -28,6 +31,7 @@ public class Ejercicio5 {
         list.add(new Student("Musk", "Elon", LocalDate.of(1971, 6, 28)));
         list.add(new Student("Bezos", "Jeff", LocalDate.of(1964, 1, 12)));
         list.add(new Student("Salvatto", "Mateo", LocalDate.of(1999, 1, 10)));
+        list.add(new Student("Fulanito", "Cosme", LocalDate.of(2021, 1, 10)));
     }
 }
 
